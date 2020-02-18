@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component} from '@angular/core';
+import { Keyboard } from '@ionic-native/keyboard/ngx';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+
+  public isTextFieldFocus:any=false;
+  constructor(private keyboard: Keyboard) {
+  }
+  focusInput(event){
+    this.isTextFieldFocus=true;
+  }
+  onFoucusOut(event){
+    this.isTextFieldFocus=false;
+  }
+  closeKeyboard(){
+    this.isTextFieldFocus=false;
+    this.keyboard.hide();
+  }
 
 }

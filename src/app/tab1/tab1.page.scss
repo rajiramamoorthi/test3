@@ -1,3 +1,11 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+.focusin
+{
+  border: 1px solid red;
+}
+.focusout
+{
+  border: 1px solid blue;
+}
